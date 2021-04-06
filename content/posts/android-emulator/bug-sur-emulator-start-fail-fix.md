@@ -30,7 +30,7 @@ HVF error: HV_ERROR qemu-system-x86_64: failed to initialize HVF: Invalid argume
 
  大约3个月前，我写了一篇博客文章，介绍如何在macOS上创建QEMU Ubuntu 20.04 VM。如果按照新发布的macOS 11.0的说明进行操作，则QEMU 5.1将失败，并显示以下错误：
 
-```
+```shell
 qemu-system-x86_64: Error: HV_ERROR
 fish: 'qemu-system-x86_64 \
     -machi…' terminated by signal SIGABRT (Abort)
@@ -41,7 +41,7 @@ fish: 'qemu-system-x86_64 \
 
 要解决此问题，我们要做的就是将权利添加到qemu-system-x86_64二进制文件中。首先创建一个entitlements.xml具有以下内容的xml文件：
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
