@@ -1,5 +1,5 @@
 ---
-title: "How to Use Flutter MethodChannel/使用flutter methodChannel"
+title: "How to Use Flutter MethodChannel"
 date: 2021-05-21T11:27:20+08:00
 draft: true
 ---
