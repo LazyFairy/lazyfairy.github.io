@@ -18,23 +18,23 @@ flutter实现methodChannel
 import 'package:flutter/services.dart';
 
 class MyChannel {
-  static MyChannel _instance;
+  static MyChannel? _instance;
   static MyChannel shared() {
     if (_instance == null) {
       _instance = MyChannel();
     }
-    return _instance;
+    return _instance!;
   }
 
-  final String channelName = "custom/methodChannel";
+  final String channelName = "default";
+  MethodChannel? channel;
 
   MyChannel() {
-
-      //初始化 MethodChannel
+    //初始化 MethodChannel
     channel = MethodChannel(channelName);
 
     //设置handler
-    channel.setMethodCallHandler((call) async {
+    channel?.setMethodCallHandler((call) async {
       print(call.arguments); //dynamic
       switch (call.method) {
         case 'something':
@@ -44,9 +44,8 @@ class MyChannel {
       return "";
     });
   }
-
-  MethodChannel channel;
 }
+
 
 ```
 
