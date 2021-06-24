@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+
+<meta name="theme-color" content="#000000" />
+
+<meta http-equiv="window-target" content="_top" />
+
+
+<meta name="description" content="上一篇文章写了点开发板的记录，基础刚刚看完，下一步需要搞焊接了，没买装备，暂时放下了， 最近莫名想着搞独立开发了，找了各种方向还是觉得做 apple store 的" />
+<meta name="generator" content="Hugo 0.80.0 with theme pure" />
+<title>程序员弯路指南-迫于无聊,入门了一下 swiftui 开发 - suke`s Notes</title>
+
+
+<link rel="stylesheet" href="https://blog.abadboy.cn/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+<meta property="og:title" content="程序员弯路指南-迫于无聊,入门了一下 swiftui 开发" />
+<meta property="og:description" content="上一篇文章写了点开发板的记录，基础刚刚看完，下一步需要搞焊接了，没买装备，暂时放下了， 最近莫名想着搞独立开发了，找了各种方向还是觉得做 apple store 的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.abadboy.cn/2020/10/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97-%E8%BF%AB%E4%BA%8E%E6%97%A0%E8%81%8A%E5%85%A5%E9%97%A8%E4%BA%86%E4%B8%80%E4%B8%8Bswiftui%E5%BC%80%E5%8F%91/" />
+<meta property="article:published_time" content="2020-10-24T09:08:35+00:00" />
+<meta property="article:modified_time" content="2020-10-24T09:08:35+00:00" />
+<meta itemprop="name" content="程序员弯路指南-迫于无聊,入门了一下 swiftui 开发">
+<meta itemprop="description" content="上一篇文章写了点开发板的记录，基础刚刚看完，下一步需要搞焊接了，没买装备，暂时放下了， 最近莫名想着搞独立开发了，找了各种方向还是觉得做 apple store 的">
+<meta itemprop="datePublished" content="2020-10-24T09:08:35+00:00" />
+<meta itemprop="dateModified" content="2020-10-24T09:08:35+00:00" />
+<meta itemprop="wordCount" content="1171">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="程序员弯路指南-迫于无聊,入门了一下 swiftui 开发"/>
+<meta name="twitter:description" content="上一篇文章写了点开发板的记录，基础刚刚看完，下一步需要搞焊接了，没买装备，暂时放下了， 最近莫名想着搞独立开发了，找了各种方向还是觉得做 apple store 的"/>
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+
+<!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+<meta name="wlhlauth" content="96da17219d9fe9c7370a9bb647eb4743" />
+<script data-ad-client="ca-pub-7365907728205811" async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/lazyfury" target="_blank">
+            <img class="img-circle img-rotate" src="https://blog.abadboy.cn/icon.jpeg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">小孩儿</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">啥都学一点的小白~</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>beijing, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-projects">
+                <a href="/projects/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Projects</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>enjoy~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div id="tag-cloud-list" class="widget-body">
+            
+            
+            <a href="https://blog.abadboy.cn/tags/express/" class="tag-list-link" rel="1">express<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://blog.abadboy.cn/tags/javascript/" class="tag-list-link" rel="1">javascript<span
+               class="tag-list-count">1</span></a>
+            
+    </div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    tagCloud('#tag-cloud-list a',  8 ,  20 );
+  }
+};
+
+function tagCloud(where, min, max) {
+  let iMax = 0;
+  let iMin = 0;
+  $(where).each(function() {
+    let weight = Number($(this).attr("rel"));
+    if(iMax < weight) iMax = weight;
+    if(iMin > weight || iMin == 0) iMin = weight;
+  });
+  let step = (max - min)/(iMax - iMin);
+  $(where).each(function() {
+    let weight = $(this).attr("rel") - iMin;
+    $(this).css({"font-size": min + (weight * step) + 'px'});
+  });
+};
+</script>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/crypto/" class="category-list-link">crypto</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/golang/" class="category-list-link">golang</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/javascript/" class="category-list-link">javascript</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://blog.abadboy.cn/tags/express/" class="tag-list-link">express</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://blog.abadboy.cn/tags/javascript/" class="tag-list-link">javascript</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/05/how-to-use-flutter-methodchannel/" class="title">How to Use Flutter MethodChannel</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-05-21 11:27:20 &#43;0800 &#43;0800" itemprop="datePublished">2021-05-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/04/bug-sur-emulator-start-fail-fix/" class="title">Bug Sur android emulator 启动失败修复，卡cash-server，没有界面</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-04-06 13:23:00 &#43;0800 &#43;0800" itemprop="datePublished">2021-04-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/02/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" class="title">游戏开发入门</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-02-21 15:43:59 &#43;0800 &#43;0800" itemprop="datePublished">2021-02-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/01/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%8A%A0%E5%AF%86%E4%BF%A1%E6%81%AF%E7%9A%84app-idea/" class="title">关于一个加密信息的app Idea</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-01-24 12:40:02 &#43;0800 &#43;0800" itemprop="datePublished">2021-01-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/" class="title">程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-12-10 08:55:26 &#43;0000 UTC" itemprop="datePublished">2020-12-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/10/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97-%E8%BF%AB%E4%BA%8E%E6%97%A0%E8%81%8A%E5%85%A5%E9%97%A8%E4%BA%86%E4%B8%80%E4%B8%8Bswiftui%E5%BC%80%E5%8F%91/"
+    >程序员弯路指南-迫于无聊,入门了一下 swiftui 开发</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://blog.abadboy.cn/2020/10/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97-%E8%BF%AB%E4%BA%8E%E6%97%A0%E8%81%8A%E5%85%A5%E9%97%A8%E4%BA%86%E4%B8%80%E4%B8%8Bswiftui%E5%BC%80%E5%8F%91/" class="article-date">
+  <time datetime="2020-10-24 09:08:35 &#43;0000 UTC" itemprop="datePublished">2020-10-24</time>
+</a>
+</span>
+
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1171字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>上一篇文章写了点开发板的记录，基础刚刚看完，下一步需要搞焊接了，没买装备，暂时放下了，</p>
+<p>最近莫名想着搞独立开发了，找了各种方向还是觉得做 apple store 的 app 会比较合适，于是拿着 ios14 上线之后很火的 widget 做了些练习，这里记录一下</p>
+<h2 id="学习目标">学习目标</h2>
+<p>想要用于开发 widget，app 的主要内容还是倾向于使用 flutter</p>
+<h2 id="基础语法">基础语法</h2>
+<p>这个还没细看，基于 xcode 代码提示和实际问题开始的</p>
+<h2 id="入门文档">入门文档</h2>
+<p><a href="https://developer.apple.com/tutorials/swiftui/">官方手把手教学 立即开始做一个简单 app</a></p>
+<p><a href="https://developer.apple.com/cn/swift/resources/">swift 官方文档资源</a></p>
+<p><a href="https://medium.com/%E5%BD%BC%E5%BE%97%E6%BD%98%E7%9A%84-swift-ios-app-%E9%96%8B%E7%99%BC%E5%95%8F%E9%A1%8C%E8%A7%A3%E7%AD%94%E9%9B%86/swiftui-%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC%E5%88%9D%E9%AB%94%E9%A9%97-aea9122741b1">SwiftUI 程式開發初體驗 medium.com </a> 这是我找到的一个，官方的虽然交互漂亮，但是有点太慢了</p>
+<p><a href="https://onevcat.com/">https://onevcat.com/ 猫神 似乎是个大咖 出过相关的开发书籍</a></p>
+<h2 id="遇到的问题-解决记录">遇到的问题 解决记录</h2>
+<h3 id="打开-xcode-找不到组件属性面板">打开 xcode 找不到组件属性面板</h3>
+<p>因为 xcode11 之后支持了 canvas 实时预览组件，这个属性面板跟随了 canvas 的显示和隐藏，</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk05ufl3euj30uq0lqq3z.jpg" alt="">
+右上角点击+号有一个选择组件可以直接拖放的面板，也跟随了这个设置</p>
+<h3 id="swift-ui-自动撑开父组件">swift ui 自动撑开父组件</h3>
+<p>和 flutter 一样，swift ui 常用布局组件类似 html 的<!-- raw HTML omitted -->display:flex<!-- raw HTML omitted --> ，但是没有实现类型<!-- raw HTML omitted -->flex：1<!-- raw HTML omitted -->的属性</p>
+<p>需要使用一个 Spacer 的组件撑开剩余的空间
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk05yx1ha7j30i609e0sv.jpg" alt=""></p>
+<h3 id="cocoapods-使用">CocoaPods 使用</h3>
+<p>1.安装 <a href="https://cocoapods.org/">https://cocoapods.org/</a></p>
+<p>2.使用<!-- raw HTML omitted -->pod init<!-- raw HTML omitted -->在工作目录进行初始化，之后打开<!-- raw HTML omitted -->Profile<!-- raw HTML omitted -->文件编辑</p>
+<pre><code># Uncomment the next line to define a global platform for your project
+# 指定ios版本
+platform :ios, '10.0'
+
+# 因为我需要在 app 和 widget 同时使用，所以直接全局安装了
+pod 'Alamofire', '~&gt; 5.2'
+pod 'SwiftyJSON'
+
+target 'infoExtension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  # 在这里安装需要的库
+  # Pods for infoExtension
+
+end
+
+target 'v2widget' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+
+
+  # Pods for v2widget
+
+  target 'v2widgetTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'v2widgetUITests' do
+    # Pods for testing
+  end
+
+end
+
+</code></pre>
+<p>3.编辑完成之后，返回命令行在工作目录执行 <!-- raw HTML omitted -->pod install <!-- raw HTML omitted -->安装 4.安装完成之后需要关闭 xcode,找到工作目录，打开 workspace 文件，这个是 pod 新建的，包含了下载的库
+<img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk068v86yhj30ok0bi3yx.jpg" alt=""></p>
+<h3 id="request-网络请求需要用到一个-alamofire-的库">request 网络请求(需要用到一个 Alamofire 的库</h3>
+<p>上一段已经安装了需要的库
+最新版本的 Alamofire 不能直接使用 Alamofire.request 调用，而是声明了一个 AF 的命名空间
+使用是类似 <!-- raw HTML omitted -->AF.request(url)<!-- raw HTML omitted --></p>
+<pre><code class="language-swift">//声明url !在某些场景下表示必须实现类型
+let url = URL(string: &quot;https://www.xxxx.com/api/members/show.json?username=suke971219&quot;)!
+
+//responseJSON 表示返回json类型 还支持string及其他类型
+var user:User;
+AF.request(url,method: HTTPMethod.get).responseJSON{
+            response in
+            // response in 相当于 (response)=&gt;{} 但是不知道为什么这里不需要大括号{}
+            switch (response.result){
+            case .success(let json):
+                print(json )//这里的json应该已经转换了 但是是一个Any类型，下一步类型强转
+                let dict = json as! Dictionary&lt;String,AnyObject&gt;
+                user = User(json:dict)
+                print(user)
+            case .failure(let err):
+                print(&quot;error \(err)&quot;)
+            }
+        }
+</code></pre>
+<h3 id="dictionary-到一个实际的-model直接使用字典类型似乎不是一个好习惯">Dictionary 到一个实际的 model（直接使用字典类型似乎不是一个好习惯</h3>
+<p>我找了很多，推荐的都是<a href="https://github.com/alibaba/HandyJSON">HandyJSON</a> <a href="https://github.com/SwiftyJSON/SwiftyJSON">SwiftyJSON</a> 以及一些其他的框架，但是我使用 pod 安装的时候遇到了一个 swift 版本的问题，我有必须使用最新版本的强迫症，所以没有继续</p>
+<p>这是一个简单的例子，在上一段中我们传入了一个 Dictionary 类型的字典，可以直接在初始化的阶段给对象赋值</p>
+<pre><code class="language-swift">public struct User {
+    var username:String?
+    var website:String?
+    var github:String?
+    var avatar_normal:String?
+    var url:String?
+    var created:Int?
+    var location:String?
+    var id:Int?
+    var day:String?
+    var twitter:String?
+
+    init(json: Dictionary&lt;String, Any&gt;){
+        self.username = json[&quot;username&quot;] as? String
+        self.website = json[&quot;website&quot;] as? String
+        self.github = json[&quot;github&quot;] as? String
+        self.avatar_normal = json[&quot;avatar_normal&quot;] as? String
+        self.created = json[&quot;created&quot;] as? Int
+        self.location = json[&quot;location&quot;] as? String
+        self.id = json[&quot;id&quot;] as? Int
+        self.twitter = json[&quot;twitter&quot;] as? String
+        self.day = timeStampToCurrennTime(timeStamp: Double(self.created ?? 0))
+    }
+}
+</code></pre>
+<h3 id="一个转换时间戳的小工具">一个转换时间戳的小工具</h3>
+<p><a href="https://juejin.im/post/6844903796141735950">掘金-swift 时间戳与时间相互转化</a></p>
+<h3 id="模块间相互引用">模块间相互引用</h3>
+<p>你可以新建一个目录创建一些工具类的文件，并且只要在文件属性的 target 指定相关的模块就可以直接引用了</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gk06tto0urj31f70u0tfh.jpg" alt=""></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <div style="display:flex;flex-direction:row">
+        <div style="flex: 1;">
+          <strong>本文链接: </strong>
+      <a style="word-break:break-all; " href="https://blog.abadboy.cn/2020/10/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97-%E8%BF%AB%E4%BA%8E%E6%97%A0%E8%81%8A%E5%85%A5%E9%97%A8%E4%BA%86%E4%B8%80%E4%B8%8Bswiftui%E5%BC%80%E5%8F%91/" title="程序员弯路指南-迫于无聊,入门了一下 swiftui 开发" target="_blank" rel="external">https://blog.abadboy.cn/2020/10/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97-%E8%BF%AB%E4%BA%8E%E6%97%A0%E8%81%8A%E5%85%A5%E9%97%A8%E4%BA%86%E4%B8%80%E4%B8%8Bswiftui%E5%BC%80%E5%8F%91/</a>
+
+        </div>
+        <img src="http://utils.abadboy.cn/qr?text=https%3a%2f%2fblog.abadboy.cn%2f2020%2f10%2f%25E7%25A8%258B%25E5%25BA%258F%25E5%2591%2598%25E5%25BC%25AF%25E8%25B7%25AF%25E6%258C%2587%25E5%258D%2597-%25E8%25BF%25AB%25E4%25BA%258E%25E6%2597%25A0%25E8%2581%258A%25E5%2585%25A5%25E9%2597%25A8%25E4%25BA%2586%25E4%25B8%2580%25E4%25B8%258Bswiftui%25E5%25BC%2580%25E5%258F%2591%2f" width="100" alt="">
+      </div>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/lazyfury" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog.abadboy.cn/icon.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/lazyfury" target="_blank"><span class="text-dark">小孩儿</span><small class="ml-1x">啥都学一点的小白~</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://blog.abadboy.cn/2020/10/%E6%9C%80%E8%BF%91%E5%AD%A6%E4%B9%A0esp32%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" title="最近学习esp32开发板的一些记录"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/"
+                    title="程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+
+</nav>
+
+
+
+  <div id="gitalk-container"></div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/lazyfury" target="" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://diff.blog/" target="" title="link" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-link"></i></a></li>
+    <li><a href="https://blog.abadboy.cn/index.xml" target="" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+
+  <div class="copyright">
+    &copy;2021  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/blueimp/JavaScript-MD5@v2.18.0/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '191aacd3ca941985dfb8',
+  clientSecret: '44a5ead3109fafbf891b8ae153ea0a8e37f0fdb1',
+  repo: 'treblex.github.io',
+  owner: 'Treblex',
+  admin: ['Treblex'],
+  id: md5(location.pathname),      
+  distractionFreeMode: false  
+})
+if(document.querySelector("#gitalk-container")){
+  gitalk.render('gitalk-container')
+
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/java.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/shell.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/rust.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/go.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/dart.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://blog.abadboy.cn/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://blog.abadboy.cn/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/blog.abadboy.cn\/',
+            CONTENT_URL: 'https:\/\/blog.abadboy.cn\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://blog.abadboy.cn/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

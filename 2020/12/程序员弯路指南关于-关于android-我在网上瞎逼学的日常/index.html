@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+
+<meta name="theme-color" content="#000000" />
+
+<meta http-equiv="window-target" content="_top" />
+
+
+<meta name="description" content="First . ADB 基础 ，测试设备 这个在之前疯狂刷机的年纪学的，零零散散的没有具体的文档了，因为用的 android studio 所以直接找到相关目录加入环境变量即可&#39; # 常用命令 adb" />
+<meta name="generator" content="Hugo 0.80.0 with theme pure" />
+<title>程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常 - suke`s Notes</title>
+
+
+<link rel="stylesheet" href="https://blog.abadboy.cn/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+<meta property="og:title" content="程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常" />
+<meta property="og:description" content="First . ADB 基础 ，测试设备 这个在之前疯狂刷机的年纪学的，零零散散的没有具体的文档了，因为用的 android studio 所以直接找到相关目录加入环境变量即可&#39; # 常用命令 adb" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/" />
+<meta property="article:published_time" content="2020-12-10T08:55:26+00:00" />
+<meta property="article:modified_time" content="2020-12-10T08:55:26+00:00" />
+<meta itemprop="name" content="程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常">
+<meta itemprop="description" content="First . ADB 基础 ，测试设备 这个在之前疯狂刷机的年纪学的，零零散散的没有具体的文档了，因为用的 android studio 所以直接找到相关目录加入环境变量即可&#39; # 常用命令 adb">
+<meta itemprop="datePublished" content="2020-12-10T08:55:26+00:00" />
+<meta itemprop="dateModified" content="2020-12-10T08:55:26+00:00" />
+<meta itemprop="wordCount" content="1304">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常"/>
+<meta name="twitter:description" content="First . ADB 基础 ，测试设备 这个在之前疯狂刷机的年纪学的，零零散散的没有具体的文档了，因为用的 android studio 所以直接找到相关目录加入环境变量即可&#39; # 常用命令 adb"/>
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+
+<!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+<meta name="wlhlauth" content="96da17219d9fe9c7370a9bb647eb4743" />
+<script data-ad-client="ca-pub-7365907728205811" async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/lazyfury" target="_blank">
+            <img class="img-circle img-rotate" src="https://blog.abadboy.cn/icon.jpeg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">小孩儿</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">啥都学一点的小白~</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>beijing, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-projects">
+                <a href="/projects/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Projects</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>enjoy~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div id="tag-cloud-list" class="widget-body">
+            
+            
+            <a href="https://blog.abadboy.cn/tags/express/" class="tag-list-link" rel="1">express<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://blog.abadboy.cn/tags/javascript/" class="tag-list-link" rel="1">javascript<span
+               class="tag-list-count">1</span></a>
+            
+    </div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    tagCloud('#tag-cloud-list a',  8 ,  20 );
+  }
+};
+
+function tagCloud(where, min, max) {
+  let iMax = 0;
+  let iMin = 0;
+  $(where).each(function() {
+    let weight = Number($(this).attr("rel"));
+    if(iMax < weight) iMax = weight;
+    if(iMin > weight || iMin == 0) iMin = weight;
+  });
+  let step = (max - min)/(iMax - iMin);
+  $(where).each(function() {
+    let weight = $(this).attr("rel") - iMin;
+    $(this).css({"font-size": min + (weight * step) + 'px'});
+  });
+};
+</script>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/crypto/" class="category-list-link">crypto</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/golang/" class="category-list-link">golang</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/javascript/" class="category-list-link">javascript</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://blog.abadboy.cn/tags/express/" class="tag-list-link">express</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://blog.abadboy.cn/tags/javascript/" class="tag-list-link">javascript</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/05/how-to-use-flutter-methodchannel/" class="title">How to Use Flutter MethodChannel</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-05-21 11:27:20 &#43;0800 &#43;0800" itemprop="datePublished">2021-05-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/04/bug-sur-emulator-start-fail-fix/" class="title">Bug Sur android emulator 启动失败修复，卡cash-server，没有界面</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-04-06 13:23:00 &#43;0800 &#43;0800" itemprop="datePublished">2021-04-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/02/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" class="title">游戏开发入门</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-02-21 15:43:59 &#43;0800 &#43;0800" itemprop="datePublished">2021-02-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/01/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%8A%A0%E5%AF%86%E4%BF%A1%E6%81%AF%E7%9A%84app-idea/" class="title">关于一个加密信息的app Idea</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-01-24 12:40:02 &#43;0800 &#43;0800" itemprop="datePublished">2021-01-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/" class="title">程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-12-10 08:55:26 &#43;0000 UTC" itemprop="datePublished">2020-12-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/"
+    >程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/" class="article-date">
+  <time datetime="2020-12-10 08:55:26 &#43;0000 UTC" itemprop="datePublished">2020-12-10</time>
+</a>
+</span>
+
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1304字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="first--adb-基础-测试设备">First . ADB 基础 ，测试设备</h1>
+<p>这个在之前疯狂刷机的年纪学的，零零散散的没有具体的文档了，因为用的 android studio 所以直接找到相关目录加入环境变量即可'</p>
+<pre><code class="language-bash">    # 常用命令
+    adb devices #列出已链接的设备
+    adb connect 192.168.0.xx:5555 #链接局域网的设备
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1glihfjm9bvj31tk0lkq6d.jpg" alt=""></p>
+<p>测试手机用的小米 note3，miui 开始慢慢限制权限了，所以刷了个魔趣的系统，开启开发者模式之后，可以在开发者模式里找到 网络 adb 开启</p>
+<h3 id="跑题关于刷机的步骤-非必要">！跑题，关于刷机的步骤 非必要</h3>
+<p>Twrp 下载 <a href="https://twrp.me/Devices/">https://twrp.me/Devices/</a>
+魔趣 ROM <a href="https://download.mokeedev.com/">https://download.mokeedev.com/</a></p>
+<pre><code class="language-bash">    # 使用命令行刷机
+    # ！需提前确认相关机型如何解bl锁，国内厂商很多不开启了，小米需要在官网 http://www.miui.com/unlock/index.html 开启
+    # 1.使用usb链接
+    adb reboot bootloader
+    # 2.进入fastboot开发模式后 先刷入recover
+    fastboot flash recovery twrp-2.8.x.x-xxx.img
+    # 重启后进入rec模式，小米是按住开机和音量+
+    fastboot reboot
+    # 进入rec模式后,adb发送系统镜像
+    adb push /xxxx/xxx.img /sdcard/
+    # more twrp卡刷，清除分区（某些时候需要重启下再安装），返回首页安装，找到镜像刷入即可
+</code></pre>
+<p>下一步使用 <!-- raw HTML omitted -->adb connect 192.168.0.xx:5555<!-- raw HTML omitted --> 链接局域网设备。 天下苦（type c 的接口一直掉）已久 😂</p>
+<h1 id="second--新建项目">Second . 新建项目</h1>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1glii24w68aj313u0u00tn.jpg" alt=""></p>
+<h1 id="third--buildgradle-配置">Third . build.Gradle 配置</h1>
+<p>看的 <a href="https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android">uniapp adnroid 本地打包</a> 的文档</p>
+<pre><code class="language-gradle">//声明项目是一个app
+plugins {
+    id 'com.android.application'
+}
+
+//构建配置
+android {
+    //项目签名
+    signingConfigs {
+        jks {
+            storeFile file('xx.jks')
+            storePassword 'xx'
+            keyAlias 'xx'
+            keyPassword 'xxx'
+        }
+    }
+
+    compileSdkVersion 30
+    buildToolsVersion &quot;30.0.2&quot;
+
+    defaultConfig {
+        //包名
+        applicationId &quot;com.rtg.test&quot;
+        //最小支持版本 ，小于这个版本的无法安装app
+        minSdkVersion 19
+        //目标版本 ，上架市场指定 现在一般是28
+        targetSdkVersion 30
+        //版本号 市场判断升级
+        versionCode 1
+        versionName &quot;1.0&quot;
+
+        //引用依赖过多之后报了一个错误 无法编译 需要开启这个
+        multiDexEnabled true
+        //指定内核
+        ndk {
+            abiFilters 'x86','armeabi-v7a'
+        }
+        //默认的 还是没入测试的门
+        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;
+        //签名app
+        signingConfig signingConfigs.jks
+    }
+
+    //默认
+    buildTypes { ... }
+
+    //使用uniapp时，需复制下面代码
+    /*代码开始*/
+    aaptOptions {
+        additionalParameters '--auto-add-overlay'
+        //noCompress 'foo', 'bar'
+        ignoreAssetsPattern &quot;!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~&quot;
+    }
+    /*代码结束*/
+
+    //指定java版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    flatDir(
+            dirs: &quot;libs&quot;
+    )
+}
+dependencies {
+    //引用依赖  就学会一个 filetree 挺好用的
+    implementation fileTree(dir: &quot;libs&quot;,includes: [&quot;*.aar&quot;,&quot;*.jar&quot;])
+}
+</code></pre>
+<h1 id="fourth--androidmanifestxml">Fourth . AndroidManifest.xml</h1>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.rtg.test&quot;&gt;
+
+    &lt;!-- 申请权限 --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.CAMERA&quot; /&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/Theme.Test&quot;&gt;
+
+        &lt;!-- 默认视图 --&gt;
+        &lt;activity
+            android:name=&quot;.MainActivity&quot;
+            android:label=&quot;@string/app_name&quot;
+            android:theme=&quot;@style/TranslucentTheme&quot;
+            android:screenOrientation=&quot;user&quot;
+            android:windowSoftInputMode=&quot;adjustResize&quot; &gt;
+            &lt;!-- 应该是设置为主窗口 --&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+<h1 id="more-">More .</h1>
+<h2 id="android-文档">Android 文档</h2>
+<p><a href="https://developer.android.com/guide/components/fundamentals?hl=zh-cn">https://developer.android.com/guide/components/fundamentals?hl=zh-cn</a>
+官方文档挺清晰的，就是没耐心看完</p>
+<h2 id="uniapp-原生扩展加-alipay-的-demo没-ui-的安卓画界面的方式还是没搞懂">UniApp 原生扩展加 alipay 的 demo,没 UI 的，安卓画界面的方式还是没搞懂</h2>
+<p>支付宝文档：<a href="https://opendocs.alipay.com/open/204/105296">https://opendocs.alipay.com/open/204/105296</a></p>
+<p><!-- raw HTML omitted -->import io.dcloud.feature.uniapp<!-- raw HTML omitted --> 的包是在 <a href="https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android">uniapp adnroid 本地打包</a> 下的 sdk 里 <!-- raw HTML omitted -->uniapp-v8-release.aar<!-- raw HTML omitted --></p>
+<pre><code class="language-java">package com.rtg.mylibrary;
+
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.text.TextUtils;
+
+import com.alipay.sdk.app.AuthTask;
+import com.alipay.sdk.app.EnvUtils;
+import com.alipay.sdk.app.PayTask;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import io.dcloud.feature.uniapp.annotation.UniJSMethod;
+import io.dcloud.feature.uniapp.bridge.UniJSCallback;
+import io.dcloud.feature.uniapp.common.UniModule;
+
+
+// UniModule 声明为可以在uni原生模块中调用
+public class Pay extends UniModule {
+
+    @UniJSMethod //声明一个js可以调用的方法
+    public void sayHello(String tag) {
+        System.out.println(&quot;hello uni module!&quot;);
+    }
+
+    // private final int SDK_PAY_FLAG = 1; //没用到，基于官方到sdk改了
+
+    // 设置沙箱变量，是一个常量，所以如果不写else部分，下一次调用还是沙箱
+    private void isSandBox(Boolean sandbox){
+        if(sandbox){
+            EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
+        }else {
+            EnvUtils.setEnv(EnvUtils.EnvEnum.ONLINE);
+        }
+    }
+
+
+    @UniJSMethod(uiThread = true)
+    public void AliPay(String orderInfo,Boolean sandbox, UniJSCallback callBack){
+
+        //是个常量，需要重写 大意了就没有闪
+        this.isSandBox(sandbox);
+
+        // mUniSDKInstance.getContext() 获取到uni的当前Activity
+        if(mUniSDKInstance.getContext() instanceof Activity){
+            final Activity activity = (Activity) mUniSDKInstance.getContext();
+             Map&lt;String,Object&gt; jsCallbackResult = new HashMap&lt;&gt;();
+
+            // 声明一个新的Runnable 用于下一步开启线程
+            Runnable payRunnable = new Runnable() {
+                @Override
+                public void run() {
+                   try{
+                       PayTask task = new PayTask(activity);
+                       String result = task.pay(orderInfo,true);
+                    //    需要在当前 Activity 启动线程 回调处理结果，否则会造成cash
+                       activity.runOnUiThread(new Runnable() {
+                           @Override
+                           public void run() {
+                               jsCallbackResult.put(&quot;result&quot;,result);
+                              if(callBack!=null)callBack.invoke(jsCallbackResult);
+                           }
+                       });
+                   }catch(final Exception err){
+                       activity.runOnUiThread(new Runnable() {
+                           @Override
+                           public void run() {
+                               jsCallbackResult.put(&quot;exception&quot;,err);
+                               if(callBack!=null)callBack.invoke(jsCallbackResult);
+                           }
+                       });
+                        System.out.println(&quot;支付失败&quot;+err);
+                   }
+                }
+            };
+
+            // 启动线程，线程用完即自动结束 不需要手动关闭
+            Thread _thread = new Thread(payRunnable);
+            _thread.start();
+        }
+
+    }
+}
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <div style="display:flex;flex-direction:row">
+        <div style="flex: 1;">
+          <strong>本文链接: </strong>
+      <a style="word-break:break-all; " href="https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/" title="程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常" target="_blank" rel="external">https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/</a>
+
+        </div>
+        <img src="http://utils.abadboy.cn/qr?text=https%3a%2f%2fblog.abadboy.cn%2f2020%2f12%2f%25E7%25A8%258B%25E5%25BA%258F%25E5%2591%2598%25E5%25BC%25AF%25E8%25B7%25AF%25E6%258C%2587%25E5%258D%2597%25E5%2585%25B3%25E4%25BA%258E-%25E5%2585%25B3%25E4%25BA%258Eandroid-%25E6%2588%2591%25E5%259C%25A8%25E7%25BD%2591%25E4%25B8%258A%25E7%259E%258E%25E9%2580%25BC%25E5%25AD%25A6%25E7%259A%2584%25E6%2597%25A5%25E5%25B8%25B8%2f" width="100" alt="">
+      </div>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/lazyfury" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog.abadboy.cn/icon.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/lazyfury" target="_blank"><span class="text-dark">小孩儿</span><small class="ml-1x">啥都学一点的小白~</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://blog.abadboy.cn/2020/10/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97-%E8%BF%AB%E4%BA%8E%E6%97%A0%E8%81%8A%E5%85%A5%E9%97%A8%E4%BA%86%E4%B8%80%E4%B8%8Bswiftui%E5%BC%80%E5%8F%91/" title="程序员弯路指南-迫于无聊,入门了一下 swiftui 开发"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://blog.abadboy.cn/2021/01/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%8A%A0%E5%AF%86%E4%BF%A1%E6%81%AF%E7%9A%84app-idea/"
+                    title="关于一个加密信息的app Idea"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+
+</nav>
+
+
+
+  <div id="gitalk-container"></div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/lazyfury" target="" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://diff.blog/" target="" title="link" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-link"></i></a></li>
+    <li><a href="https://blog.abadboy.cn/index.xml" target="" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+
+  <div class="copyright">
+    &copy;2021  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/blueimp/JavaScript-MD5@v2.18.0/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '191aacd3ca941985dfb8',
+  clientSecret: '44a5ead3109fafbf891b8ae153ea0a8e37f0fdb1',
+  repo: 'treblex.github.io',
+  owner: 'Treblex',
+  admin: ['Treblex'],
+  id: md5(location.pathname),      
+  distractionFreeMode: false  
+})
+if(document.querySelector("#gitalk-container")){
+  gitalk.render('gitalk-container')
+
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/java.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/shell.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/rust.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/go.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/dart.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://blog.abadboy.cn/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://blog.abadboy.cn/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/blog.abadboy.cn\/',
+            CONTENT_URL: 'https:\/\/blog.abadboy.cn\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://blog.abadboy.cn/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

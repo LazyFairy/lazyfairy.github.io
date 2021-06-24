@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+
+<meta name="theme-color" content="#000000" />
+
+<meta http-equiv="window-target" content="_top" />
+
+
+<meta name="description" content="Go-echo-demo https://github.com/Treblex/go-echo-demo go 语言入门 推荐这个 https://tour.golang.org/welcome/2 还没看完 嘿嘿 Go 语言在线练习场，讲解很细 web 框架 简单看了一些基础我就来搞这个了，这个项目也是一个 web 实践 echo 官方文档 注意首页" />
+<meta name="generator" content="Hugo 0.80.0 with theme pure" />
+<title>GO学习项目 - suke`s Notes</title>
+
+
+<link rel="stylesheet" href="https://blog.abadboy.cn/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+<meta property="og:title" content="GO学习项目" />
+<meta property="og:description" content="Go-echo-demo https://github.com/Treblex/go-echo-demo go 语言入门 推荐这个 https://tour.golang.org/welcome/2 还没看完 嘿嘿 Go 语言在线练习场，讲解很细 web 框架 简单看了一些基础我就来搞这个了，这个项目也是一个 web 实践 echo 官方文档 注意首页" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.abadboy.cn/2020/01/go%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/" />
+<meta property="article:published_time" content="2020-01-26T14:33:00+00:00" />
+<meta property="article:modified_time" content="2020-01-26T14:33:00+00:00" />
+<meta itemprop="name" content="GO学习项目">
+<meta itemprop="description" content="Go-echo-demo https://github.com/Treblex/go-echo-demo go 语言入门 推荐这个 https://tour.golang.org/welcome/2 还没看完 嘿嘿 Go 语言在线练习场，讲解很细 web 框架 简单看了一些基础我就来搞这个了，这个项目也是一个 web 实践 echo 官方文档 注意首页">
+<meta itemprop="datePublished" content="2020-01-26T14:33:00+00:00" />
+<meta itemprop="dateModified" content="2020-01-26T14:33:00+00:00" />
+<meta itemprop="wordCount" content="2133">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GO学习项目"/>
+<meta name="twitter:description" content="Go-echo-demo https://github.com/Treblex/go-echo-demo go 语言入门 推荐这个 https://tour.golang.org/welcome/2 还没看完 嘿嘿 Go 语言在线练习场，讲解很细 web 框架 简单看了一些基础我就来搞这个了，这个项目也是一个 web 实践 echo 官方文档 注意首页"/>
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+
+<!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+<meta name="wlhlauth" content="96da17219d9fe9c7370a9bb647eb4743" />
+<script data-ad-client="ca-pub-7365907728205811" async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/lazyfury" target="_blank">
+            <img class="img-circle img-rotate" src="https://blog.abadboy.cn/icon.jpeg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">小孩儿</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">啥都学一点的小白~</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>beijing, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-projects">
+                <a href="/projects/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Projects</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>enjoy~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div id="tag-cloud-list" class="widget-body">
+            
+            
+            <a href="https://blog.abadboy.cn/tags/express/" class="tag-list-link" rel="1">express<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://blog.abadboy.cn/tags/javascript/" class="tag-list-link" rel="1">javascript<span
+               class="tag-list-count">1</span></a>
+            
+    </div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    tagCloud('#tag-cloud-list a',  8 ,  20 );
+  }
+};
+
+function tagCloud(where, min, max) {
+  let iMax = 0;
+  let iMin = 0;
+  $(where).each(function() {
+    let weight = Number($(this).attr("rel"));
+    if(iMax < weight) iMax = weight;
+    if(iMin > weight || iMin == 0) iMin = weight;
+  });
+  let step = (max - min)/(iMax - iMin);
+  $(where).each(function() {
+    let weight = $(this).attr("rel") - iMin;
+    $(this).css({"font-size": min + (weight * step) + 'px'});
+  });
+};
+</script>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/crypto/" class="category-list-link">crypto</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/golang/" class="category-list-link">golang</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://blog.abadboy.cn/categories/javascript/" class="category-list-link">javascript</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://blog.abadboy.cn/tags/express/" class="tag-list-link">express</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://blog.abadboy.cn/tags/javascript/" class="tag-list-link">javascript</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/05/how-to-use-flutter-methodchannel/" class="title">How to Use Flutter MethodChannel</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-05-21 11:27:20 &#43;0800 &#43;0800" itemprop="datePublished">2021-05-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/04/bug-sur-emulator-start-fail-fix/" class="title">Bug Sur android emulator 启动失败修复，卡cash-server，没有界面</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-04-06 13:23:00 &#43;0800 &#43;0800" itemprop="datePublished">2021-04-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/02/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" class="title">游戏开发入门</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-02-21 15:43:59 &#43;0800 &#43;0800" itemprop="datePublished">2021-02-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2021/01/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%8A%A0%E5%AF%86%E4%BF%A1%E6%81%AF%E7%9A%84app-idea/" class="title">关于一个加密信息的app Idea</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-01-24 12:40:02 &#43;0800 &#43;0800" itemprop="datePublished">2021-01-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/" class="title">程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-12-10 08:55:26 &#43;0000 UTC" itemprop="datePublished">2020-12-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/01/go%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/"
+    >GO学习项目</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://blog.abadboy.cn/2020/01/go%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/" class="article-date">
+  <time datetime="2020-01-26 14:33:00 &#43;0000 UTC" itemprop="datePublished">2020-01-26</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/golang/"> golang </a>
+</span>
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2133字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="go-echo-demo">Go-echo-demo</h1>
+<p><a href="https://github.com/Treblex/go-echo-demo">https://github.com/Treblex/go-echo-demo</a></p>
+<h2 id="go-语言入门">go 语言入门</h2>
+<p>推荐这个 <a href="https://tour.golang.org/welcome/2">https://tour.golang.org/welcome/2</a> 还没看完 嘿嘿
+Go 语言在线练习场，讲解很细</p>
+<h2 id="web-框架">web 框架</h2>
+<p>简单看了一些基础我就来搞这个了，这个项目也是一个 web 实践</p>
+<blockquote>
+<h3 id="echo-官方文档httpgo-echoorg-注意首页有几个很有用的简单实例但是你按照文档目录是无法返回这一页的--当时找了好久找不到">echo <a href="http://go-echo.org/">官方文档</a> 注意首页有几个很有用的简单实例，但是你按照文档目录是无法返回这一页的 😂 当时找了好久找不到</h3>
+<p>这个项目就是 据说超快</p>
+</blockquote>
+<blockquote>
+<h3 id="gin-官方文档httpsgin-goniccomzh-cndocs">gin <a href="https://gin-gonic.com/zh-cn/docs/">官方文档</a></h3>
+<p>江湖人称：用过都说好，据说开发是可以自动重启 不用手动运行项目 想试试，但是我懒 和上边那个一样快，又一个扩展项目 好像叫 green 可以自动生成文档，不过很久没更新了，有兴趣了解一下这个怎么实现的</p>
+</blockquote>
+<blockquote>
+<h3 id="iris-官方文档httpsiris-gocom">iris <a href="https://iris-go.com/">官方文档</a></h3>
+<p>大型项目支持</p>
+</blockquote>
+<h2 id="数据库支持">数据库支持</h2>
+<p><a href="https://jasperxu.github.io/gorm-zh/crud.html#q">gorm 中文文档</a> 我看的这个 因为搜索引擎先找到了这个 后来才发现其实不是官方的 这里&raquo;
+<a href="https://gorm.io/">gorm 官方文档</a></p>
+<pre><code class="language-go">        &quot;github.com/jinzhu/gorm&quot; //数据库操作框架 支持模型和链式操作 不用写sql了
+        _ &quot;github.com/go-sql-driver/mysql&quot; //go语言sql驱动
+
+        db, err := gorm.Open(&quot;mysql&quot;, config.DataBase)
+        if err != nil {
+            panic(err)
+        }
+        db.LogMode(true)
+        defer db.Close() //defer表示函数结束是调用 ，  但是我不想在每个函数都重新打开链接，所以我创建了一个 util包 并暴露了 DB 供全局使用，我在 main.go 的函数结尾出调用了 defer db.Close()，但我并不知道他是否关闭了链接，可以知道的是链接确实只创建了一次，并一直保持
+
+</code></pre>
+<h1 id="-关于这个项目">📃 关于这个项目</h1>
+<pre><code class="language-go">.
+├── Dockerfile //docker构建 我还在摸索 不过确实运行成功了
+├── README.md
+├── build.linux.sh  //linux构建文件，我在一段时间后才意识到 编译到不同平台到二进制文件也会有不同，不该是0和1吗 😂
+├── build.sh         //mac构建
+├── build.win.sh    //win .exe文件
+├── config
+│   └── config.go   //配置文件
+├── dist            //编译后到文件
+│   └── main-linux
+├── go.mod          //go模块
+├── go.sum          //git clone 之后可能需要删除这个文件重新按照mod
+├── h5              // 这是一个简单到请求接口到页面，在尝试了一段时间layui写admin页面之后，觉得直接写接口好了，&gt;&gt;&gt; mvc 主要是卡在 模版分离之后 header 和 footer 之类到layout文件 如何请求数据，因为他不对应一个路由，当前找到到方案是模版函数 但是没有运行成功 可能我绑定模版render到方法也有问题, 也尝试了ifarme 不太喜欢，还是后边试一下antd或者自己搞一下vue或者react的后台页面
+│   ├── api.js
+│   ├── index.html
+│   ├── main.css
+│   └── main.js
+├── main.go         //入口文件
+├── modal           //模型文件， 数据库查询的方法
+│   └── user.go
+├── router          //路由文件
+│   ├── admin       //内包含一个类似router.go的入口文件，和其他路由文件
+│   └── router.go   //暴露一个 Init 方法接收 echo对象, 用于声明当前路面的子文件夹路由对象 或者 路由
+&gt;&gt;&gt;&gt;&gt;&gt; 例子 &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    // 项目首页
+	admin.Init(e, baseURL)
+
+	// 入口
+	e.GET(baseURL, func(c echo.Context) error {
+		return c.String(http.StatusOK, &quot;hello world！&quot;)
+    })
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+├── static  //资源文件
+├── template    //模板文件 弃用mvc之后 只保留了error
+│   └── error.html
+└── util    //工具包
+    ├── db.go   // 暴露一个DB对象 用户操作数据库,启动后仅链接一次
+    ├── return.go   //返回的json对象格式 和错误码声明
+    ├── template.go //声明模版
+    ├── time.go //时间格式化  以及  链接数据库是自动格式化的一个 结构体
+    └── util.go //暂无内容--
+</code></pre>
+<h2 id="-杂项-遇到的一些小问题">🦊 杂项 遇到的一些小问题</h2>
+<h3 id="时间戳格式化">时间戳格式化</h3>
+<pre><code class="language-go">    var timeLayout string = &quot;2006年01月02日 15:04:05&quot;
+    t := time.Now()
+    t.Format(timeLayout)
+
+    //这里 2006 01 02 15 04 05 必须是固定的才能解析到正确的时间
+    //我在 util/time.go 内实现了一个简单的方法以使用 y-m-d h:i:s 来格式化时间 主要还是因为懒得记
+    //  Format 也提供了很多的默认layout，默认layou英文支持做的好一些，中文的显示自定义的layout满足需求
+</code></pre>
+<h3 id="数据库存取时间类型">数据库存取时间类型</h3>
+<h4 id="gorm-时间类型自定义解析格式">gorm 时间类型自定义解析格式</h4>
+<pre><code class="language-go">
+// LocalTime 继承time.Time类型
+type LocalTime struct {
+	time.Time
+}
+// 自定义的 layout
+var timeLayout string = &quot;2006年01月02日 15:04:05&quot;
+
+// MarshalJSON json格式化时间的方法
+// 在网上搜到的方式是格式化为时间戳的  不符合我的需求，这个方法是从 time源代码里找到的,直接修改默认 layout为自定义即可
+func (t LocalTime) MarshalJSON() ([]byte, error) {
+	if y := t.Year(); y &lt; 0 || y &gt;= 10000 {
+		// RFC 3339 is clear that years are 4 digits exactly.
+		// See golang.org/issue/4556#c15 for more discussion.
+		return nil, errors.New(&quot;Time.MarshalJSON: year outside of range [0,9999]&quot;)
+	}
+	b := make([]byte, 0, len(timeLayout)+2)
+	b = append(b, '&quot;')
+	b = t.AppendFormat(b, timeLayout)
+	b = append(b, '&quot;')
+	return b, nil
+}
+
+
+//下边两个方法是gorm需要,不需要修改，如果没有使用 gorm则不需要
+// Value Value
+func (t LocalTime) Value() (driver.Value, error) {
+	var zeroTime time.Time
+	if t.Time.UnixNano() == zeroTime.UnixNano() {
+		return nil, nil
+	}
+	return t.Time, nil
+}
+
+// Scan Scan
+func (t *LocalTime) Scan(v interface{}) error {
+	value, ok := v.(time.Time)
+	if ok {
+		*t = LocalTime{Time: value}
+		return nil
+	}
+	return fmt.Errorf(&quot;can not convert %v to timestamp&quot;, v)
+}
+</code></pre>
+<h4 id="存取时间的时候相差-8-小时">存取时间的时候相差 8 小时</h4>
+<pre><code class="language-go">//DataBase 数据库配置 username:password@host/database_name?param
+DataBase string = &quot;root:2568597007suke@(localhost:3306)/test?charset=utf8mb4&amp;parseTime=true&amp;loc=Asia%2fShanghai&quot;
+
+//charset=utf8mb4 数据库编码
+//parseTime=true    自动解析时间 time.Time 类型解析显示不正确  z100:h1223 之类的一个字符串
+//loc=Asia%2fShanghai  默认亚洲时间，数据库存储 detatime 默认为utc时区 也就是会比国内早8个小时
+</code></pre>
+<h4 id="查询数据时-隐藏某些隐私字段">查询数据时 隐藏某些隐私字段</h4>
+<p>gorm:&quot;-&quot; 在保存数据的时候会忽略 查询是同样显示</p>
+<pre><code class="language-go">    //暂时的解决方案是声明两个模型，在查询时仅显示必要字段
+    //由于gorm使用结构名 + s  例如 users articles 默认为约定表名，所以声明另外的模型是需要在查询数据只指定表名
+    // gorm.Table(&quot;users&quot;)
+</code></pre>
+<h4 id="gorm-更新-或者-添加删除字段后-查询影响的数据行数一直为-0因此无法知道是否更新成功-或者-保存数据成功">！gorm 更新 或者 添加删除字段后 查询影响的数据行数一直为 0，因此无法知道是否更新成功 或者 保存数据成功</h4>
+<p>在操作之后重新赋值 db 以获取新的位置 而不是直接使用 db.RowsAffected</p>
+<pre><code class="language-go">row := db.Model(&amp;User{ID: id}).Updates(data)
+row.RowsAffected
+</code></pre>
+<h3 id="go-get-安装完包之后不能使用命令后直接执行">go get 安装完包之后不能使用命令后直接执行</h3>
+<p>path 设置错误</p>
+<pre><code class="language-sh"># //go mod需要开启
+export GO111MODULE=on
+# //指定代理
+export GOPROXY=https://goproxy.cn;
+# goroot  go环境所在目录  系统包
+export GOROOT=/usr/local/go
+# 安装的package所在目录  自己定义，修改目录之后需要重新安装package
+export GOPATH=~/gowork
+# 将GOPATH/bin 加入全局path之后 自定义安装的package就可以全局运行了 fresh govender
+export PATH=$GOPATH/bin:$GOPATH:$PATH
+
+</code></pre>
+<h3 id="web-开发时自动重启项目">web 开发时自动重启项目</h3>
+<p><a href="https://github.com/gravityblast/fresh">https://github.com/gravityblast/fresh</a>
+看起来像是检查 ctrl s 的时候重新编译文件并执行，文件没有修改的时候也会触发重启</p>
+<h2 id="-暂未解决的问题">⚠️ 暂未解决的问题</h2>
+<h2 id="环境设置">环境设置</h2>
+<pre><code>export GO111MODULE=on GOPROXY=https://goproxy.cn;
+export GOROOT=/usr/local/go
+export GOPATH=~/gowork
+
+export PATH=$GOPATH/bin:$GOPATH:$PATH
+
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <div style="display:flex;flex-direction:row">
+        <div style="flex: 1;">
+          <strong>本文链接: </strong>
+      <a style="word-break:break-all; " href="https://blog.abadboy.cn/2020/01/go%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/" title="GO学习项目" target="_blank" rel="external">https://blog.abadboy.cn/2020/01/go%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</a>
+
+        </div>
+        <img src="http://utils.abadboy.cn/qr?text=https%3a%2f%2fblog.abadboy.cn%2f2020%2f01%2fgo%25E5%25AD%25A6%25E4%25B9%25A0%25E9%25A1%25B9%25E7%259B%25AE%2f" width="100" alt="">
+      </div>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/lazyfury" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://blog.abadboy.cn/icon.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/lazyfury" target="_blank"><span class="text-dark">小孩儿</span><small class="ml-1x">啥都学一点的小白~</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://blog.abadboy.cn/2020/01/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E7%99%BB%E9%99%86%E9%81%87%E5%88%B0%E9%87%8D%E5%A4%8D%E5%BE%AA%E7%8E%AF%E7%99%BB%E9%99%86%E7%9A%84%E9%97%AE%E9%A2%98/" title="在微信登陆遇到重复循环登陆的问题"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://blog.abadboy.cn/2020/03/flutter%E5%AE%9E%E8%B7%B5/"
+                    title="Flutter实践"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+
+</nav>
+
+
+
+  <div id="gitalk-container"></div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/lazyfury" target="" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://diff.blog/" target="" title="link" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-link"></i></a></li>
+    <li><a href="https://blog.abadboy.cn/index.xml" target="" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+
+  <div class="copyright">
+    &copy;2021  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/blueimp/JavaScript-MD5@v2.18.0/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '191aacd3ca941985dfb8',
+  clientSecret: '44a5ead3109fafbf891b8ae153ea0a8e37f0fdb1',
+  repo: 'treblex.github.io',
+  owner: 'Treblex',
+  admin: ['Treblex'],
+  id: md5(location.pathname),      
+  distractionFreeMode: false  
+})
+if(document.querySelector("#gitalk-container")){
+  gitalk.render('gitalk-container')
+
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/java.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/shell.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/rust.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/go.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/dart.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://blog.abadboy.cn/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://blog.abadboy.cn/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/blog.abadboy.cn\/',
+            CONTENT_URL: 'https:\/\/blog.abadboy.cn\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://blog.abadboy.cn/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

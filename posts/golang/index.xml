@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on suke`s Notes</title>
+    <link>https://blog.abadboy.cn/posts/golang/</link>
+    <description>Recent content in golang on suke`s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>CC BY 4.0 CN</copyright>
+    <lastBuildDate>Tue, 21 Apr 2020 15:05:28 +0000</lastBuildDate>
+    
+        <atom:link href="https://blog.abadboy.cn/posts/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Use Flutter MethodChannel</title>
+      <link>https://blog.abadboy.cn/2021/05/how-to-use-flutter-methodchannel/</link>
+      <pubDate>Fri, 21 May 2021 11:27:20 +0800</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2021/05/how-to-use-flutter-methodchannel/</guid>
+      <description>资料：https://stablekernel.com/article/flutter-platform-channels-quick-st</description>
+    </item>
+    
+    <item>
+      <title>Bug Sur android emulator 启动失败修复，卡cash-server，没有界面</title>
+      <link>https://blog.abadboy.cn/2021/04/bug-sur-emulator-start-fail-fix/</link>
+      <pubDate>Tue, 06 Apr 2021 13:23:00 +0800</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2021/04/bug-sur-emulator-start-fail-fix/</guid>
+      <description>问题1 add library fail qemu 目录下没有vulkan库文件，在emulator/lib64下拷贝复制过来就行（确实有一个add library fail，但是不确定是否影响</description>
+    </item>
+    
+    <item>
+      <title>游戏开发入门</title>
+      <link>https://blog.abadboy.cn/2021/02/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 21 Feb 2021 15:43:59 +0800</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2021/02/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/</guid>
+      <description>bilibili</description>
+    </item>
+    
+    <item>
+      <title>关于一个加密信息的app Idea</title>
+      <link>https://blog.abadboy.cn/2021/01/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%8A%A0%E5%AF%86%E4%BF%A1%E6%81%AF%E7%9A%84app-idea/</link>
+      <pubDate>Sun, 24 Jan 2021 12:40:02 +0800</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2021/01/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%8A%A0%E5%AF%86%E4%BF%A1%E6%81%AF%E7%9A%84app-idea/</guid>
+      <description>1.功能规划 1.1 主要功能，基于不对称加密 加密文本消息 1.2 维护一个联系人列表，记录对方的加密方式和公钥 1.2.1 分享我的公钥 1.2.2 需要一个设备唯一 id(或者初</description>
+    </item>
+    
+    <item>
+      <title>程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常</title>
+      <link>https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/</link>
+      <pubDate>Thu, 10 Dec 2020 08:55:26 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/</guid>
+      <description>First . ADB 基础 ，测试设备 这个在之前疯狂刷机的年纪学的，零零散散的没有具体的文档了，因为用的 android studio 所以直接找到相关目录加入环境变量即可&#39; # 常用命令 adb</description>
+    </item>
+    
+    <item>
+      <title>程序员弯路指南-迫于无聊,入门了一下 swiftui 开发</title>
+      <link>https://blog.abadboy.cn/2020/10/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97-%E8%BF%AB%E4%BA%8E%E6%97%A0%E8%81%8A%E5%85%A5%E9%97%A8%E4%BA%86%E4%B8%80%E4%B8%8Bswiftui%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Sat, 24 Oct 2020 09:08:35 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/10/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97-%E8%BF%AB%E4%BA%8E%E6%97%A0%E8%81%8A%E5%85%A5%E9%97%A8%E4%BA%86%E4%B8%80%E4%B8%8Bswiftui%E5%BC%80%E5%8F%91/</guid>
+      <description>上一篇文章写了点开发板的记录，基础刚刚看完，下一步需要搞焊接了，没买装备，暂时放下了， 最近莫名想着搞独立开发了，找了各种方向还是觉得做 apple store 的</description>
+    </item>
+    
+    <item>
+      <title>最近学习esp32开发板的一些记录</title>
+      <link>https://blog.abadboy.cn/2020/10/%E6%9C%80%E8%BF%91%E5%AD%A6%E4%B9%A0esp32%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 19 Oct 2020 09:31:12 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/10/%E6%9C%80%E8%BF%91%E5%AD%A6%E4%B9%A0esp32%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</guid>
+      <description>开发环境 macOS Big Sur 11.0 Beta 版(20A5395g) 设备型号 nodemcu 32s esp32 的开发 最近心血来潮，买了块 esp32 的开发板，使用的 arduino 框架，需要使用到 c++，还没专门学习，主</description>
+    </item>
+    
+    <item>
+      <title>Go Web Server上传文件实践</title>
+      <link>https://blog.abadboy.cn/2020/04/server%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Tue, 21 Apr 2020 15:05:28 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/04/server%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%AE%9E%E8%B7%B5/</guid>
+      <description>https://github.com/Treblex/go-echo-demo/blob/master/server/router/router.go#L63 func upload(c echo.Context) error { file, err := c.FormFile(&amp;quot;file&amp;quot;) if err != nil { return util.JSONErr(c, err, &amp;quot;上传错误&amp;quot;) //未获取到文件流 } pathExt := path.Ext(file.Filename) acceptsImgExt := []interface{}{&amp;quot;jpg&amp;quot;, &amp;quot;png&amp;quot;, &amp;quot;jpeg&amp;quot;, &amp;quot;webp&amp;quot;} //图片类型 acceptsVideoExt := []interface{}{&amp;quot;mov&amp;quot;, &amp;quot;mp4&amp;quot;, &amp;quot;avi&amp;quot;} //视频类</description>
+    </item>
+    
+    <item>
+      <title>Flutter开发日记-侧滑删除组件</title>
+      <link>https://blog.abadboy.cn/2020/04/flutter%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-%E4%BE%A7%E6%BB%91%E5%88%A0%E9%99%A4%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Tue, 07 Apr 2020 09:41:25 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/04/flutter%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-%E4%BE%A7%E6%BB%91%E5%88%A0%E9%99%A4%E7%BB%84%E4%BB%B6/</guid>
+      <description>flutter 侧滑删除组件 文件地址 click here 这个组件现在还处于刚刚好能用的状态，问题还蛮多，就是在点击和 touch 事件的时候记录位置，处理偏移 布局使用的一个Stack</description>
+    </item>
+    
+    <item>
+      <title>Flutter开发日记-Image网络图片加载错误处理</title>
+      <link>https://blog.abadboy.cn/2020/04/flutter%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-image%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
+      <pubDate>Tue, 07 Apr 2020 09:41:10 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/04/flutter%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-image%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
+      <description>自定义 ImageProvider 实现 文件 github 地址 ：click here 注释比较清楚，不多写了,这个主题很好看，但是代码高亮一直没啥反应 主要的方法都是和原生组件已有的，主要重写</description>
+    </item>
+    
+    <item>
+      <title>Go语言 gorm 自定义json类型</title>
+      <link>https://blog.abadboy.cn/2020/03/%E8%87%AA%E5%AE%9A%E4%B9%89json%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Fri, 27 Mar 2020 11:20:34 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/03/%E8%87%AA%E5%AE%9A%E4%B9%89json%E7%B1%BB%E5%9E%8B/</guid>
+      <description>在 gorm 的 stuct 中实现自定义类型， 完成， req.body=&amp;gt;(MarshaJson json)=&amp;gt;stuct=&amp;gt;(Value grom.Model)=&amp;gt;数据库 数据库=&amp;gt;(Scan grom.Model)=&amp;gt;struct=&amp;gt;(UnmarshaJson json)=&amp;gt;json // Array json传数组类型 &amp;gt;&amp;gt</description>
+    </item>
+    
+    <item>
+      <title>Flutter实践</title>
+      <link>https://blog.abadboy.cn/2020/03/flutter%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 16 Mar 2020 12:03:44 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/03/flutter%E5%AE%9E%E8%B7%B5/</guid>
+      <description>环境配置 git clone https://github.com/flutter/flutter.git everyYouLike/flutter 设置环境变量指向 flutter/bin 安装 vscode vscode flutter 插件 ctrl+p 命令模式 新建 flutter project 更多内容 flutter.dev 推荐教程 click here 开始 1.入口文件 import &#39;package:flutter/material.dart&#39;; //不同于javascript，</description>
+    </item>
+    
+    <item>
+      <title>GO学习项目</title>
+      <link>https://blog.abadboy.cn/2020/01/go%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sun, 26 Jan 2020 14:33:00 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/01/go%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</guid>
+      <description>Go-echo-demo https://github.com/Treblex/go-echo-demo go 语言入门 推荐这个 https://tour.golang.org/welcome/2 还没看完 嘿嘿 Go 语言在线练习场，讲解很细 web 框架 简单看了一些基础我就来搞这个了，这个项目也是一个 web 实践 echo 官方文档 注意首页</description>
+    </item>
+    
+    <item>
+      <title>在微信登陆遇到重复循环登陆的问题</title>
+      <link>https://blog.abadboy.cn/2020/01/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E7%99%BB%E9%99%86%E9%81%87%E5%88%B0%E9%87%8D%E5%A4%8D%E5%BE%AA%E7%8E%AF%E7%99%BB%E9%99%86%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 26 Jan 2020 01:28:57 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2020/01/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E7%99%BB%E9%99%86%E9%81%87%E5%88%B0%E9%87%8D%E5%A4%8D%E5%BE%AA%E7%8E%AF%E7%99%BB%E9%99%86%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>简介 最近遇到一个挺奇怪的问题，在微信使用公众号登陆，走完登陆流程，拿到 token，返回上一页继续请求接口，仍然木有权限，需要重新登陆 也有表现</description>
+    </item>
+    
+    <item>
+      <title>UniApp Push检测 👂</title>
+      <link>https://blog.abadboy.cn/2019/12/push%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Tue, 03 Dec 2019 13:56:10 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2019/12/push%E6%A3%80%E6%B5%8B/</guid>
+      <description>使用 import push from &#39;./push let checkPush = new push() 代码 这里class用处不大，只是觉得看起来很舒服，拆分模块也方便后续扩展 export default class push{ // 初始化 constructor(){ this.init() } init(){ // 开启推送 uni.subscribePush({ provider: &amp;quot;unipush&amp;quot;, success: function(res) {</description>
+    </item>
+    
+    <item>
+      <title>🚀 UniApp热更新检测🔥🔥🔥</title>
+      <link>https://blog.abadboy.cn/2019/12/uniapp%E7%83%AD%E6%9B%B4%E6%96%B0%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Tue, 03 Dec 2019 13:55:37 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2019/12/uniapp%E7%83%AD%E6%9B%B4%E6%96%B0%E6%A3%80%E6%B5%8B/</guid>
+      <description>使用 //入口文件 // 检查更新 let updateCheck = //new update(this.api.update,true,&#39;1.0.0&#39;) // 模板中 import update from &#39;@/util/update.js&#39; export default { data() { return { updateCheck://new update(this.api.update), } }, ... updateCheck.status //更新状态 updateCheck.version //当前资源包版本 updateCheck.doUpdate() //更新方法 代码 接口和字段都</description>
+    </item>
+    
+    <item>
+      <title>uniapp快速开发常用工具「1」🔧 📦</title>
+      <link>https://blog.abadboy.cn/2019/11/uniapp%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B71/</link>
+      <pubDate>Thu, 28 Nov 2019 11:50:00 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2019/11/uniapp%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B71/</guid>
+      <description>自己在项目中总结的一些工具，总会有不足，欢迎指正 request 已发布 Dcloud 插件 request easy use 通用网络请求 Dcloud 插件 网络请求整理，常用的一些请求方法，接口整合 待修复：co</description>
+    </item>
+    
+    <item>
+      <title>express试水（1）「大淘客api」😎</title>
+      <link>https://blog.abadboy.cn/2019/11/express%E8%AF%95%E6%B0%B41/</link>
+      <pubDate>Wed, 27 Nov 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2019/11/express%E8%AF%95%E6%B0%B41/</guid>
+      <description>安装 npm init npm install express &amp;ndash;save 快速生成项目 npm install -g express-generator express newApp 基础目录 bin/www www 配置文件，某些插件会把 log 文件写在这里 public 静态资源文件，需要在入口文件挂载才可以访问 //st</description>
+    </item>
+    
+    <item>
+      <title>分割一个长数组至 n 个 len 长度的小数组</title>
+      <link>https://blog.abadboy.cn/2019/08/%E5%88%86%E5%89%B2%E4%B8%80%E4%B8%AA%E9%95%BF%E6%95%B0%E7%BB%84%E8%87%B3-n-%E4%B8%AA-len-%E9%95%BF%E5%BA%A6%E7%9A%84%E5%B0%8F%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Fri, 23 Aug 2019 14:33:19 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2019/08/%E5%88%86%E5%89%B2%E4%B8%80%E4%B8%AA%E9%95%BF%E6%95%B0%E7%BB%84%E8%87%B3-n-%E4%B8%AA-len-%E9%95%BF%E5%BA%A6%E7%9A%84%E5%B0%8F%E6%95%B0%E7%BB%84/</guid>
+      <description>场景 拆分一个长列表[1,2,3,&amp;hellip;n]至 [[1,2,3],[1,2,3],[1,2,3]&amp;hellip;]配合套嵌循环，可以简</description>
+    </item>
+    
+    <item>
+      <title>javascript时间戳转指定格式 ⌚️</title>
+      <link>https://blog.abadboy.cn/2019/08/javascript%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8C%87%E5%AE%9A%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Thu, 22 Aug 2019 17:43:23 +0000</pubDate>
+      
+      <guid>https://blog.abadboy.cn/2019/08/javascript%E6%97%B6%E9%97%B4%E6%88%B3%E8%BD%AC%E6%8C%87%E5%AE%9A%E6%A0%BC%E5%BC%8F/</guid>
+      <description>场景 Api 直接返回数据库表的 curd 小伙伴 思路 序号 简介 1 new 一个时间对象 返回 年月日 时分秒（按需补 0 2 传入一个类似 Y-m-d H:i:s 格式的字符串 不区分大小写 3 使用正则替</description>
+    </item>
+    
+  </channel>
+</rss>
