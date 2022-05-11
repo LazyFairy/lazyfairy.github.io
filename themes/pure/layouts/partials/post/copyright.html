@@ -5,20 +5,19 @@
       <div style="display:flex;flex-direction:row">
         <div style="flex: 1;">
           <strong>{{ T "copyright_post" }}: </strong>
-          <a style="word-break:break-all; " href="{{- .Permalink }}" title="{{- .Title }}" target="_blank"
-            rel="external">{{- .Permalink }}</a>
+      <a style="word-break:break-all; " href="{{- .Permalink }}" title="{{- .Title }}" target="_blank" rel="external">{{- .Permalink }}</a>
 
         </div>
-        <img src="http://utils.ue5doc.com/qr?text={{- .Permalink}}" width="100" alt="">
+        <img src="http://utils.abadboy.cn/qr?text={{- .Permalink}}" width="100" alt="">
       </div>
     </li>
     <li class="post-copyright-license">
       <strong>{{ T "copyright_license" }}: </strong>
-      {{- if .Site.Params.copyright_link }}
-      <a href="{{- .Site.Params.copyright_link }}" target="_blank" rel="external">{{ .Site.Copyright }}</a>
-      {{- else }}
-      {{ .Site.Copyright }}
-      {{- end }}
+{{- if .Site.Params.copyright_link }}
+        <a href="{{- .Site.Params.copyright_link }}" target="_blank" rel="external">{{ .Site.Copyright }}</a>
+{{- else }}
+        {{ .Site.Copyright }}
+{{- end }}
     </li>
   </ul>
 </blockquote>
@@ -33,8 +32,7 @@
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"><a href="{{- $profile.follow }}" target="_blank"><span class="text-dark">{{-
-              $profile.author }}</span><small class="ml-1x">{{- $profile.author_title }}</small></a></h3>
+        <h3 class="media-heading"><a href="{{- $profile.follow }}" target="_blank"><span class="text-dark">{{- $profile.author }}</span><small class="ml-1x">{{- $profile.author_title }}</small></a></h3>
         <div>{{- $profile.author_description }}</div>
       </div>
     </figure>
