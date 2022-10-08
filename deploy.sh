@@ -13,7 +13,7 @@ fi
 
 # Build the project.
 hugo -D # if using a theme, replace with `hugo -t <YOURTHEME>`
-cp CNAME ./public/
+# cp CNAME ./public/
 # Go To Public folder
 # git branch -D build
 # 新建临时分支
