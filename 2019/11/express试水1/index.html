@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no,email=no,adress=no">
+
+<meta name="theme-color" content="#000000" />
+
+<meta http-equiv="window-target" content="_top" />
+
+
+<meta name="description" content="安装 npm init npm install express &amp;ndash;save 快速生成项目 npm install -g express-generator express newApp 基础目录 bin/www www 配置文件，某些插件会把 log 文件写在这里 public 静态资源文件，需要在入口文件挂载才可以访问 //st" />
+<meta name="generator" content="Hugo 0.80.0 with theme pure" />
+<title>express试水（1）「大淘客api」😎 - suke`s Notes</title>
+
+
+<link rel="stylesheet" href="https://lazyfury.github.io/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+<meta property="og:title" content="express试水（1）「大淘客api」😎" />
+<meta property="og:description" content="安装 npm init npm install express &ndash;save 快速生成项目 npm install -g express-generator express newApp 基础目录 bin/www www 配置文件，某些插件会把 log 文件写在这里 public 静态资源文件，需要在入口文件挂载才可以访问 //st" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lazyfury.github.io/2019/11/express%E8%AF%95%E6%B0%B41/" />
+<meta property="article:published_time" content="2019-11-27T12:00:00+00:00" />
+<meta property="article:modified_time" content="2019-11-27T12:00:00+00:00" />
+<meta itemprop="name" content="express试水（1）「大淘客api」😎">
+<meta itemprop="description" content="安装 npm init npm install express &ndash;save 快速生成项目 npm install -g express-generator express newApp 基础目录 bin/www www 配置文件，某些插件会把 log 文件写在这里 public 静态资源文件，需要在入口文件挂载才可以访问 //st">
+<meta itemprop="datePublished" content="2019-11-27T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-11-27T12:00:00+00:00" />
+<meta itemprop="wordCount" content="1166">
+
+
+
+<meta itemprop="keywords" content="express,javascript," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="express试水（1）「大淘客api」😎"/>
+<meta name="twitter:description" content="安装 npm init npm install express &ndash;save 快速生成项目 npm install -g express-generator express newApp 基础目录 bin/www www 配置文件，某些插件会把 log 文件写在这里 public 静态资源文件，需要在入口文件挂载才可以访问 //st"/>
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+
+<!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+<meta name="wlhlauth" content="96da17219d9fe9c7370a9bb647eb4743" />
+<script data-ad-client="ca-pub-7365907728205811" async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/lazyfury" target="_blank">
+            <img class="img-circle img-rotate" src="https://lazyfury.github.io/icon.jpeg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">小孩儿</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">啥都学一点的小白~</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>beijing, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="想要查找什么..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-projects">
+                <a href="/projects/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Projects</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>enjoy~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div id="tag-cloud-list" class="widget-body">
+            
+            
+            <a href="https://lazyfury.github.io/tags/express/" class="tag-list-link" rel="1">express<span
+               class="tag-list-count">1</span></a>
+            
+            
+            <a href="https://lazyfury.github.io/tags/javascript/" class="tag-list-link" rel="1">javascript<span
+               class="tag-list-count">1</span></a>
+            
+    </div>
+<script>
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+    tagCloud('#tag-cloud-list a',  8 ,  20 );
+  }
+};
+
+function tagCloud(where, min, max) {
+  let iMax = 0;
+  let iMin = 0;
+  $(where).each(function() {
+    let weight = Number($(this).attr("rel"));
+    if(iMax < weight) iMax = weight;
+    if(iMin > weight || iMin == 0) iMin = weight;
+  });
+  let step = (max - min)/(iMax - iMin);
+  $(where).each(function() {
+    let weight = $(this).attr("rel") - iMin;
+    $(this).css({"font-size": min + (weight * step) + 'px'});
+  });
+};
+</script>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> 分类</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://lazyfury.github.io/categories/crypto/" class="category-list-link">crypto</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://lazyfury.github.io/categories/golang/" class="category-list-link">golang</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://lazyfury.github.io/categories/javascript/" class="category-list-link">javascript</a><span class="category-list-count">1</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> 标签</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://lazyfury.github.io/tags/express/" class="tag-list-link">express</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://lazyfury.github.io/tags/javascript/" class="tag-list-link">javascript</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://lazyfury.github.io/2021/05/how-to-use-flutter-methodchannel/" class="title">How to Use Flutter MethodChannel</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-05-21 11:27:20 &#43;0800 &#43;0800" itemprop="datePublished">2021-05-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://lazyfury.github.io/2021/04/bug-sur-emulator-start-fail-fix/" class="title">Bug Sur android emulator 启动失败修复，卡cash-server，没有界面</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-04-06 13:23:00 &#43;0800 &#43;0800" itemprop="datePublished">2021-04-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://lazyfury.github.io/2021/02/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8/" class="title">游戏开发入门</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-02-21 15:43:59 &#43;0800 &#43;0800" itemprop="datePublished">2021-02-21</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://lazyfury.github.io/2021/01/%E5%85%B3%E4%BA%8E%E4%B8%80%E4%B8%AA%E5%8A%A0%E5%AF%86%E4%BF%A1%E6%81%AF%E7%9A%84app-idea/" class="title">关于一个加密信息的app Idea</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-01-24 12:40:02 &#43;0800 &#43;0800" itemprop="datePublished">2021-01-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://lazyfury.github.io/2020/12/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BC%AF%E8%B7%AF%E6%8C%87%E5%8D%97%E5%85%B3%E4%BA%8E-%E5%85%B3%E4%BA%8Eandroid-%E6%88%91%E5%9C%A8%E7%BD%91%E4%B8%8A%E7%9E%8E%E9%80%BC%E5%AD%A6%E7%9A%84%E6%97%A5%E5%B8%B8/" class="title">程序员弯路指南关于-关于android😭-我在网上瞎逼学的日常</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-12-10 08:55:26 &#43;0000 UTC" itemprop="datePublished">2020-12-10</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">文章目录</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2019/11/express%E8%AF%95%E6%B0%B41/"
+    >express试水（1）「大淘客api」😎</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://lazyfury.github.io/2019/11/express%E8%AF%95%E6%B0%B41/" class="article-date">
+  <time datetime="2019-11-27 12:00:00 &#43;0000 UTC" itemprop="datePublished">2019-11-27</time>
+</a>
+</span>
+  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/express/"> express </a>
+    <a class="article-tag-link" href="/tags/javascript/"> javascript </a>
+  </span>
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1166字</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3分 </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="安装">安装</h1>
+<blockquote>
+<p>npm init</p>
+</blockquote>
+<blockquote>
+<p>npm install express &ndash;save</p>
+</blockquote>
+<h2 id="快速生成项目">快速生成项目</h2>
+<blockquote>
+<p>npm install -g express-generator</p>
+</blockquote>
+<blockquote>
+<p>express newApp</p>
+</blockquote>
+<h1 id="基础目录">基础目录</h1>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g9eofwkq2mj30950dsdgq.jpg" alt=""></p>
+<h3 id="codebinwwwcode"><!-- raw HTML omitted -->bin/www<!-- raw HTML omitted --></h3>
+<p>www 配置文件，某些插件会把 log 文件写在这里</p>
+<h3 id="codepubliccode"><!-- raw HTML omitted -->public<!-- raw HTML omitted --></h3>
+<p>静态资源文件，需要在入口文件挂载才可以访问</p>
+<pre><code class="language-javascrpt">    //static是一个虚拟目录 可以直接用 root目录
+    app.use('/static',express.static(path.join(__dirname, 'public')));
+</code></pre>
+<h3 id="coderoutescode"><!-- raw HTML omitted -->routes<!-- raw HTML omitted --></h3>
+<p>路由文件</p>
+<h3 id="codeviewscode"><!-- raw HTML omitted -->views<!-- raw HTML omitted --></h3>
+<p>模板文件，可自定义程度很高 还没有详细了解过，暂时倾向于前后端分离，只写接口在这里</p>
+<h3 id="codeappjscode"><!-- raw HTML omitted -->app.js<!-- raw HTML omitted --></h3>
+<p>入口文件，大部分的配置都可以在这里完成
+使用插件 cookie jsonparse 这些都需要引用插件实现，模板项目中已经生成了常用的插件
+自定义模板
+定义路由</p>
+<h1 id="curl-接第三方接口">Curl 接第三方接口</h1>
+<blockquote>
+<p>这里使用大淘客的 api 做的尝试，没有具体项目逻辑想不到应该做什么，另外数据库也还没尝试</p>
+</blockquote>
+<h2 id="demo">demo</h2>
+<p><a href="https://github.com/Treblex/dataoke-api/blob/master/server/util/CommodityFactory.js">https://github.com/Treblex/dataoke-api/blob/master/server/util/CommodityFactory.js</a></p>
+<blockquote>
+<p>新建一个文件夹放自己的工具类就可以，对文件夹结构没有强制对要求,对应的调用方法在 router/api.js</p>
+</blockquote>
+<h2 id="request">Request</h2>
+<p>直接调用 request 模块就可以，使用方法也非常的简单，符合前端的习惯</p>
+<pre><code class="language-javascript">const request = require(&quot;request&quot;);
+request({ data }, (callback = (err, res, body) =&gt; {}));
+</code></pre>
+<h2 id="验签">验签</h2>
+<p>在大淘客的 demo 中，引用了 corypt md5 进行加密，这里需要注意不要在引用文件后就立即<!-- raw HTML omitted -->createHash(&lsquo;md5&rsquo;)<!-- raw HTML omitted -->，因为每个实例只能进行一次加密，在需要的地方<!-- raw HTML omitted -->createHash(&lsquo;md5&rsquo;)<!-- raw HTML omitted -->就可以了</p>
+<pre><code class="language-javscript">    crypto.createHash('md5')
+</code></pre>
+<h2 id="调用">调用</h2>
+<p><a href="https://github.com/Treblex/dataoke-api/blob/master/server/routes/api.js">https://github.com/Treblex/dataoke-api/blob/master/server/routes/api.js</a></p>
+<pre><code class="language-javascript">var express = require(&quot;express&quot;);
+var router = express.Router();
+var factory = require(&quot;../util/CommodityFactory&quot;);
+// 商品工厂对象
+let CommodityFactory = new factory({
+  appSecret: &quot;17eda35413998548b3fdebd31e6d2c51&quot;,
+  appKey: &quot;5dc6fcef48989&quot;,
+});
+// 临时写的
+const errCode = (title) =&gt; {
+  return {
+    time: new Date() * 1,
+    code: -1,
+    msg: title,
+    data: {},
+  };
+};
+// 品牌
+router.get(&quot;/get-brand-list&quot;, async function (req, res, next) {
+  let { pageId, pageSize = 10 } = req.query;
+  //   req.query 请求的参数,
+  //   如果需要支持类似thinkphp的静态url   url地址可以写成  '/detail/:id'
+  //   取值使用 req.params['id'],如果有正则，正则的部分为 req.params[index]
+  if (!pageId) {
+    res.send(errCode(&quot;pageId不可空&quot;));
+  }
+  let body = await CommodityFactory.getBarndList({
+    pageId,
+    pageSize,
+  });
+
+  //   返回页面显示的内容，在此之前可以设置返回的header 等一些常用内容
+  res.send(body);
+  //   res.render('index', { title: 'Express' ,中文:&quot;打火机卡上打哈电话接啊活动空间啊&quot;});
+  // 渲染到模板的写法，第一个参数模板名字，第二个为渲染到模板的变量
+});
+</code></pre>
+<h1 id="中间件开发">中间件开发</h1>
+<p><a href="http://www.expressjs.com.cn/guide/writing-middleware.html">官网文档&raquo;</a></p>
+<p>我的理解是中间件在 php 中类似于一个 base 控制器，</p>
+<pre><code class="language-php">    class loginBase{
+        // 检查登录，跳转页面
+        if(isLogin){
+            return true
+        }
+        // 301 login.html
+    }
+    class home extends loginBase{
+        return home
+    }
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g9eotnxbkaj30tk0iswkf.jpg" alt="">
+像文档中介绍的，其实我们定义的路由也是中间件
+我能想到的常用的业务场景就是像上边的 登录检测，用户权限这些</p>
+<pre><code class="language-javascript">app.use('/api',(res,req,next)=&gt;{
+  console.log('==err==||AppBase 登录检测或一些其他的内容');
+  let islogin = false
+  if(!islogin){
+    req.send('err 未登录什么的'),//如果不执行下一步业务逻辑，我们就必须结束请求，而不能直接return，否则页面会一直处于加载中，直到请求超时
+    return;
+  }
+  next();//执行下一步  api的路由文件
+})
+app.use('/api', apiRouter);//自定义路由  业务逻辑
+
+</code></pre>
+<h1 id="end">End</h1>
+<p>还没有部署，客户端没写，接口都对了，下面是 github 仓库
+<a href="https://github.com/Treblex/dataoke-api">https://github.com/Treblex/dataoke-api</a></p>
+<p>其实遇到一个问题没有解决，request 大淘客接口的时候又一个 version 参数，这个参数有的接口是 1.0.0 有的是 1.0.1，而且有过期验证，过期的版本无法使用，对于怎么更新接口版本和过期通知没有太好解决方法，现在 version 是在 factory 的每个请求里边写的默认参数</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <div style="display:flex;flex-direction:row">
+        <div style="flex: 1;">
+          <strong>本文链接: </strong>
+      <a style="word-break:break-all; " href="https://lazyfury.github.io/2019/11/express%E8%AF%95%E6%B0%B41/" title="express试水（1）「大淘客api」😎" target="_blank" rel="external">https://lazyfury.github.io/2019/11/express%E8%AF%95%E6%B0%B41/</a>
+
+        </div>
+        <img src="http://utils.abadboy.cn/qr?text=https%3a%2f%2flazyfury.github.io%2f2019%2f11%2fexpress%25E8%25AF%2595%25E6%25B0%25B41%2f" width="100" alt="">
+      </div>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/lazyfury" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://lazyfury.github.io/icon.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/lazyfury" target="_blank"><span class="text-dark">小孩儿</span><small class="ml-1x">啥都学一点的小白~</small></a></h3>
+        <div>Good Good Study, Day Day Up~</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://lazyfury.github.io/2019/08/%E5%88%86%E5%89%B2%E4%B8%80%E4%B8%AA%E9%95%BF%E6%95%B0%E7%BB%84%E8%87%B3-n-%E4%B8%AA-len-%E9%95%BF%E5%BA%A6%E7%9A%84%E5%B0%8F%E6%95%B0%E7%BB%84/" title="分割一个长数组至 n 个 len 长度的小数组"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;下一篇</span></a>
+            </li>
+            <li class="next">
+                <a href="https://lazyfury.github.io/2019/11/uniapp%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B71/"
+                    title="uniapp快速开发常用工具「1」🔧 📦"><span>上一篇&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="文章目录" role="button">
+                    <span>[&nbsp;</span><span>文章目录</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,qzone"></div>
+        </div>
+    </div>
+
+</nav>
+
+
+
+  <div id="gitalk-container"></div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/lazyfury" target="" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://diff.blog/" target="" title="link" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-link"></i></a></li>
+    <li><a href="https://lazyfury.github.io/index.xml" target="" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+
+  <div class="copyright">
+    &copy;2021  -
+    2022
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/blueimp/JavaScript-MD5@v2.18.0/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '191aacd3ca941985dfb8',
+  clientSecret: '44a5ead3109fafbf891b8ae153ea0a8e37f0fdb1',
+  repo: 'treblex.github.io',
+  owner: 'Treblex',
+  admin: ['Treblex'],
+  id: md5(location.pathname),      
+  distractionFreeMode: false  
+})
+if(document.querySelector("#gitalk-container")){
+  gitalk.render('gitalk-container')
+
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/java.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/shell.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/rust.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/go.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/dart.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://lazyfury.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://lazyfury.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(未命名)',
+            },
+            ROOT_URL: 'https:\/\/lazyfury.github.io\/',
+            CONTENT_URL: 'https:\/\/lazyfury.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://lazyfury.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>

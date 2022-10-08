@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on suke`s Notes</title>
+    <link>https://lazyfury.github.io/categories/</link>
+    <description>Recent content in Categories on suke`s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>CC BY 4.0 CN</copyright>
+    <lastBuildDate>Sun, 24 Jan 2021 12:40:02 +0800</lastBuildDate>
+    
+        <atom:link href="https://lazyfury.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>空闲下来做的项目</title>
+      <link>https://lazyfury.github.io/projects/</link>
+      <pubDate>Tue, 20 Aug 2019 16:25:24 +0000</pubDate>
+      
+      <guid>https://lazyfury.github.io/projects/</guid>
+      <description>不常空，下班只想呆着，无力搞学习 一个搜素工具单页 一个搜素工具单页 https://github.com/Treblex/search-tool express 试水 express 试水 https://github.com/Treblex/dataoke-api 之前抖音看的一个罗盘时钟挺好玩儿的 之前抖音看的一个罗盘时钟挺</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://lazyfury.github.io/about/</link>
+      <pubDate>Tue, 20 Aug 2019 16:24:34 +0000</pubDate>
+      
+      <guid>https://lazyfury.github.io/about/</guid>
+      <description>姓名 苏柯 当前地区 广东 东莞 行业 web 前端 移动端开发 uniapp javascript vue email suke971219@icloud.com</description>
+    </item>
+    
+    <item>
+      <title>常用javascript方法整理之数字千分位格式化</title>
+      <link>https://lazyfury.github.io/2019/08/%E5%B8%B8%E7%94%A8javascript%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86%E4%B9%8B%E6%95%B0%E5%AD%97%E5%8D%83%E5%88%86%E4%BD%8D%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
+      <pubDate>Tue, 20 Aug 2019 16:21:57 +0000</pubDate>
+      
+      <guid>https://lazyfury.github.io/2019/08/%E5%B8%B8%E7%94%A8javascript%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86%E4%B9%8B%E6%95%B0%E5%AD%97%E5%8D%83%E5%88%86%E4%BD%8D%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
+      <description>Update:有错误，小数部分的不准确 场景 &amp;gt; 使用千分位格式化金额，更正式的显示 效果 思路 1.分割整数位和小数位，处理小数位补零，或者四舍五入 2</description>
+    </item>
+    
+    <item>
+      <title>测试文章-自动部署测试</title>
+      <link>https://lazyfury.github.io/1997/01/hello-world/</link>
+      <pubDate>Wed, 01 Jan 1997 00:00:00 +0000</pubDate>
+      
+      <guid>https://lazyfury.github.io/1997/01/hello-world/</guid>
+      <description>自动部署测试Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post $ hexo new &amp;quot;My New Post&amp;quot; More info: Writing Run server $ hexo server More info:</description>
+    </item>
+    
+  </channel>
+</rss>
